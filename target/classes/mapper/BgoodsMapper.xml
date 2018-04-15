@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bysj.dao.BgoodsMapper">
+  <resultMap id="BaseResultMap" type="com.bysj.bean.Bgoods">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="Gname" jdbcType="VARCHAR" property="gname" />
+    <result column="Gprice" jdbcType="DECIMAL" property="gprice" />
+    <result column="Gcategory" jdbcType="VARCHAR" property="gcategory" />
+    <result column="Gumber" jdbcType="INTEGER" property="gumber" />
+    <result column="Gpicture" jdbcType="VARCHAR" property="gpicture" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, Gname, Gprice, Gcategory, Gumber, Gpicture
+  </sql>
+  <select id="selectByExample" parameterType="com.bysj.bean.BgoodsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bgoods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.bysj.bean.BgoodsExample">
+    delete from bgoods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bysj.bean.Bgoods">
+    insert into bgoods (id, Gname, Gprice, 
+      Gcategory, Gumber, Gpicture
+      )
+    values (#{id,jdbcType=INTEGER}, #{gname,jdbcType=VARCHAR}, #{gprice,jdbcType=DECIMAL}, 
+      #{gcategory,jdbcType=VARCHAR}, #{gumber,jdbcType=INTEGER}, #{gpicture,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bysj.bean.Bgoods">
+    insert into bgoods
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="gname != null">
+        Gname,
+      </if>
+      <if test="gprice != null">
+        Gprice,
+      </if>
+      <if test="gcategory != null">
+        Gcategory,
+      </if>
+      <if test="gumber != null">
+        Gumber,
+      </if>
+      <if test="gpicture != null">
+        Gpicture,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="gname != null">
+        #{gname,jdbcType=VARCHAR},
+      </if>
+      <if test="gprice != null">
+        #{gprice,jdbcType=DECIMAL},
+      </if>
+      <if test="gcategory != null">
+        #{gcategory,jdbcType=VARCHAR},
+      </if>
+      <if test="gumber != null">
+        #{gumber,jdbcType=INTEGER},
+      </if>
+      <if test="gpicture != null">
+        #{gpicture,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bysj.bean.BgoodsExample" resultType="java.lang.Long">
+    select count(*) from bgoods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update bgoods
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.gname != null">
+        Gname = #{record.gname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gprice != null">
+        Gprice = #{record.gprice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gcategory != null">
+        Gcategory = #{record.gcategory,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gumber != null">
+        Gumber = #{record.gumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.gpicture != null">
+        Gpicture = #{record.gpicture,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update bgoods
+    set id = #{record.id,jdbcType=INTEGER},
+      Gname = #{record.gname,jdbcType=VARCHAR},
+      Gprice = #{record.gprice,jdbcType=DECIMAL},
+      Gcategory = #{record.gcategory,jdbcType=VARCHAR},
+      Gumber = #{record.gumber,jdbcType=INTEGER},
+      Gpicture = #{record.gpicture,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>
