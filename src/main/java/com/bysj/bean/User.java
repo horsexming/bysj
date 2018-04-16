@@ -6,7 +6,7 @@ public class User {
 	private String password;
 	private String sex;
 	private Integer age;
-	private String telephont;
+	private String telephone;
 	private String address;
 
 	public Integer getId() {
@@ -49,12 +49,14 @@ public class User {
 		this.age = age;
 	}
 
-	public String getTelephont() {
-		return telephont;
+	
+
+	public String getTelephone() {
+		return telephone;
 	}
 
-	public void setTelephont(String telephont) {
-		this.telephont = telephont;
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	public String getAddress() {

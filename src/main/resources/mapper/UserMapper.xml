@@ -7,6 +7,14 @@
 	 	select* from user where username=#{username} and password=#{password}
 	 </select>
 	 
+	 <insert id="addUser" parameterType="com.bysj.bean.User">
+	 	insert into user(username,password,sex,age,telephone,address) 
+	 	values(#{username},#{password},#{sex},#{age},#{telephone},#{address})
+	 </insert>
+	 <select id="findEmpByName" parameterType="java.lang.String" resultType="com.bysj.bean.User">
+	 	select* from user where username = #{username}
+	 </select>
+	 
 	 <!-- <insert id="addUser" parameterType="com.mybatis.Entity.User">
 	 	insert into user(username,password,age) values(#{username},#{password},#{age})
 	 </insert>

@@ -20,9 +20,10 @@
 <body>
 	<form action="logins" method="post">
 		<table align="center">
-		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
-		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
-		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
+		<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+		<tr><td align="center" colspan="2"><font color="blue" size="5">欢迎光临南阳玉器售卖系统</font></td></tr>	
+		<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
 			<tr>
 				<td>用户名:</td>
 				<td><input type="text" name="username"></td>
@@ -42,7 +43,12 @@
 				<td><input type="reset" value="重置" class="btn btn-primary"></td>
 				<td align="center"><input type="submit" value="登录" class="btn btn-primary"></td>
 			</tr>
+			<tr>
+				<td align="right" colspan="2"><a href="registers"><font color="blue">没有帐号？点击注册</font></a></td>
+				
+			</tr>
 		</table>
+		
 	</form>
 	
 </body>

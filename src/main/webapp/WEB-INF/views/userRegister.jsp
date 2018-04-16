@@ -1,0 +1,83 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<link href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="static/bootstrap-3.3.7-dist/js/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>用户注册</title>
+<style type="text/css">
+	 body{      
+        background-image: url(static/image/3.jpg);      
+        background-size:cover;    
+     } 
+     
+           
+</style>
+<script type="text/javascript">
+		$(function() {
+		$("#uname").blur(function() {
+			var uname = $(this).val();
+			$.ajax({
+				type : "POST",
+				url : "checkName",
+				data : "username=" + uname,
+				success : function(data) {
+					if(data==1){
+						alert("success");
+						document.getElementById('#tip').innerHTML="sdsd";
+					}else{
+						$("#tip").html("用户名可用!");
+					}
+				}
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	
+	<form action="shopRegisters" method="post">
+		<table align="center">
+		<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+		<tr><td align="center" colspan="2"><font color="blue" size="5">淘宝者注册</font></td></tr>	
+		<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+		<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+			<tr>
+				<td>用户名:</td>
+				<td><input  id="uname" type="text" name="username"></td>
+				<td><span id="tip"></span></td>
+			</tr>
+			<tr>
+				<td>密码:</td>
+				<td><input type="text" name="password"></td>
+			</tr>
+			<tr>
+				<td>性别:</td>
+				<td><input type="text" name="sex"></td>
+			</tr>
+			<tr>
+				<td>年龄:</td>
+				<td><input type="text" name="age"></td>
+			</tr>
+			<tr>
+				<td>联系电话:</td>
+				<td><input type="text" name="telephone"></td>
+			</tr>
+			<tr>
+				<td>收货地址:</td>
+				<td><input type="text" name="address"></td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			
+			<tr>
+				<td><input type="reset" value="重置" class="btn btn-primary"></td>
+				<td align="right"><input type="submit" value="登录" class="btn btn-primary"></td>
+			</tr>
+		</table>	
+	</form>
+
+</body>
+</html>
