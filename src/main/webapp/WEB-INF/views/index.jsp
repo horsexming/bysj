@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-	<form action="logins" method="post">
+	<form action="login" method="post">
 		<table align="center">
 		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
 		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>

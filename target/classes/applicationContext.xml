@@ -13,9 +13,7 @@
      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
      http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
      
-    <context:component-scan base-package="com.bysj" use-default-filters="false">
-     <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-	</context:component-scan>
+	<context:component-scan base-package="com.bysj"></context:component-scan>
  <!-- 配置数据源 -->
  <context:property-placeholder location="classpath:dbconfig.properties"/>   
     <bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
