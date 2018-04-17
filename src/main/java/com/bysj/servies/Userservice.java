@@ -1,9 +1,5 @@
 package com.bysj.servies;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +10,9 @@ public class Userservice {
 	@Autowired
 	UserMapper userMapper;
 	
-	public List<User>  getUser(String username ,String password) {
-		List<User> list = new ArrayList<User>();
-		list.add(userMapper.getUser(username, password));
-		
-		return list;
+	public User getUser(String username ,String password) {
+		/*System.out.println(userMapper.getUser(username, password).getPassword());*/
+		return userMapper.getUser(username, password);
 	}
 	
 	public void addUser(User user) {

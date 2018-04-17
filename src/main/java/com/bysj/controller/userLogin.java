@@ -24,9 +24,10 @@ public class userLogin {
 	public String UserLogin(@RequestParam String username ,@RequestParam String password,@RequestParam Integer ra
 			,Model model) {
 		if(ra==1) {
-			List<User> list=userservice.getUser(username, password);
-			if (list!=null) {
-				model.addAttribute("user", list);
+			User user = userservice.getUser(username, password);
+			
+			if (user!=null) {
+				model.addAttribute("user", user);
 				return "login";
 			}else {
 				
@@ -37,9 +38,9 @@ public class userLogin {
 		}
 		else {
 			
-			List<User> list=userservice.getUser(username, password);
-			if (list!=null) {
-				model.addAttribute("user", list);
+			User user = userservice.getUser(username, password);
+			if (user!=null) {
+				model.addAttribute("user", user);
 				return "login";
 			}else {
 				

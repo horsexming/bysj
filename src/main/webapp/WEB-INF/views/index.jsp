@@ -18,6 +18,7 @@
 </style>
 </head>
 <body>
+    ${user}
 	<form action="logins" method="post">
 		<table align="center">
 		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>

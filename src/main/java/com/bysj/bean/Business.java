@@ -1,83 +1,68 @@
 package com.bysj.bean;
 
 public class Business {
-    private Integer id;
+	private Integer id;
+	private String username;
+	private String password;
+	private String sex;
+	private String Bemail;
+	private String Bphone;
+	private String Baddress;
 
-    private String bname;
+	public Integer getId() {
+		return id;
+	}
 
-    private String bpasswor;
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    private String bphone;
+	public String getUsername() {
+		return username;
+	}
 
-    private String bemail;
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    private String baddress;
+	public String getPassword() {
+		return password;
+	}
 
-    private String bsex;
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    private Integer bgoods;
+	public String getSex() {
+		return sex;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public String getBemail() {
+		return Bemail;
+	}
 
-    public String getBname() {
-        return bname;
-    }
+	public void setBemail(String bemail) {
+		Bemail = bemail;
+	}
 
-    public void setBname(String bname) {
-        this.bname = bname == null ? null : bname.trim();
-    }
+	public String getBphone() {
+		return Bphone;
+	}
 
-    public String getBpasswor() {
-        return bpasswor;
-    }
+	public void setBphone(String bphone) {
+		Bphone = bphone;
+	}
 
-    public void setBpasswor(String bpasswor) {
-        this.bpasswor = bpasswor == null ? null : bpasswor.trim();
-    }
+	public String getBaddress() {
+		return Baddress;
+	}
 
-    public String getBphone() {
-        return bphone;
-    }
+	public void setBaddress(String baddress) {
+		Baddress = baddress;
+	}
 
-    public void setBphone(String bphone) {
-        this.bphone = bphone == null ? null : bphone.trim();
-    }
-
-    public String getBemail() {
-        return bemail;
-    }
-
-    public void setBemail(String bemail) {
-        this.bemail = bemail == null ? null : bemail.trim();
-    }
-
-    public String getBaddress() {
-        return baddress;
-    }
-
-    public void setBaddress(String baddress) {
-        this.baddress = baddress == null ? null : baddress.trim();
-    }
-
-    public String getBsex() {
-        return bsex;
-    }
-
-    public void setBsex(String bsex) {
-        this.bsex = bsex == null ? null : bsex.trim();
-    }
-
-    public Integer getBgoods() {
-        return bgoods;
-    }
-
-    public void setBgoods(Integer bgoods) {
-        this.bgoods = bgoods;
-    }
 }

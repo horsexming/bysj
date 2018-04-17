@@ -20,19 +20,26 @@
 		$(function() {
 		$("#uname").blur(function() {
 			var uname = $(this).val();
-			$.ajax({
-				type : "POST",
-				url : "checkName",
-				data : "username=" + uname,
-				success : function(data) {
-					if(data==1){
-						alert("success");
-						document.getElementById('#tip').innerHTML="sdsd";
-					}else{
-						$("#tip").html("用户名可用!");
+			var username= document.getElementById("uname");
+			if(username.value.trim()==""){
+				$("#tip").html("用户名不能为空!");		
+			}else{			
+				$.ajax({
+					type : "POST",
+					url : "checkName",
+					data : "username=" + uname,
+					success : function(data) {
+						if(data==1){
+							$("#tip").html("用户名已存在!");
+						}else{
+							$("#tip").html("用户名可用!");
+						}
 					}
-				}
-			});
+				});
+				
+			}
+			
+			
 		});
 	});
 	</script>
