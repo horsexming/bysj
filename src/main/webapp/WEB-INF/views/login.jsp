@@ -47,11 +47,20 @@
 			<td>&nbsp;</td>
 			<td><a href="#" class="btn btn-primary">订单查询</a></td>
 			<td>&nbsp;</td>
-			<td align="right"><input type="text" name="Gname"></td><td align="left"><input type="submit" value="商品查询" class="btn btn-primary" ></td>
-			
-			
+			<td align="right"><input type="text" name="Gname"></td><td align="left"><input type="submit" value="商品查询" class="btn btn-primary" ></td>			
 		</tr>
+		
+		<tr>
+			<td><img src="static/goods/8.jpg"></td>
+			<td>${bgoods.gname}</td><td>${bgoods.gprice}</td>
+			<td>${bgoods.gcategory}</td><td><img src="static/goods/7.jpg" width="100" height="75"></td>
+			<td></td><td></td>
+		</tr>
+		<tr><td>${bgoods.gname}</td></tr>
+		<tr><td>${bgoods.gprice}</td></tr>
+		<tr><td>${bgoods.gcategory}</td></tr>
 	</table>
 	</form>
+	
 </body>
 </html>

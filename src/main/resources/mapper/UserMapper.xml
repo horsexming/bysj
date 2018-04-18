@@ -6,6 +6,9 @@
 	 <select id="getUser" resultType="com.bysj.bean.User" parameterType="String">
 	 	select* from user where username=#{username} and password=#{password}
 	 </select>
+	 <select id="getBgoods" resultType="com.bysj.bean.Bgoods" parameterType = "java.lang.Integer">
+	 	select* from bgoods where id = #{id}
+	 </select>
 	 
 	 <insert id="addUser" parameterType="com.bysj.bean.User">
 	 	insert into user(username,password,sex,age,telephone,address) 

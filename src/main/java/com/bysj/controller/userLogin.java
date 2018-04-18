@@ -2,7 +2,8 @@ package com.bysj.controller;
 
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.bysj.bean.Bgoods;
 import com.bysj.bean.User;
 import com.bysj.servies.Userservice;
 
@@ -22,12 +24,15 @@ public class userLogin {
 	
 	@RequestMapping(value="/logins", method=RequestMethod.POST )
 	public String UserLogin(@RequestParam String username ,@RequestParam String password,@RequestParam Integer ra
-			,Model model) {
+			,Model model,Map<Object,Object> map) {
 		if(ra==1) {
 			User user = userservice.getUser(username, password);
+			Bgoods bgoods = userservice.getBgoods(1);
 			
 			if (user!=null) {
 				model.addAttribute("user", user);
+				map.put("bgoods", bgoods);
+				System.out.println(bgoods.getGname());
 				return "login";
 			}else {
 				
