@@ -18,12 +18,12 @@
 </style>
 </head>
 <body>
-    ${user}
+    
 	<form action="logins" method="post">
 		<table align="center">
 		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
 		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
-		<tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
+		<tr><td>&nbsp;</td><tr><td><font color="red" size="3">${user}</font></td><tr><td>&nbsp;</td><tr><td>&nbsp;</td>
 			<tr>
 				<td>用户名:</td>
 				<td><input type="text" name="username"></td>

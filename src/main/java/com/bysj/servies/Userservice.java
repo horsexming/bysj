@@ -1,5 +1,7 @@
 package com.bysj.servies;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +23,9 @@ public class Userservice {
 		userMapper.addUser(user);
 	}
 	
-	public Bgoods getBgoods(int id) {
+	public List<Bgoods> getBgoods() {
 		
-		return userMapper.getBgoods(id);
+		return userMapper.getBgoods();
 	}
 	
 	public int  findEmpByName(String name){
@@ -34,6 +36,10 @@ public class Userservice {
 			return 0;
 		}
 		
+	}
+	
+	public String getuser(int id) {
+		return userMapper.getuser(id);
 	}
 
 }

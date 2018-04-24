@@ -6,7 +6,7 @@
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
 <link href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="static/bootstrap-3.3.7-dist/js/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>用户注册</title>
 <style type="text/css">
 	 body{      
@@ -81,7 +81,7 @@
 			
 			<tr>
 				<td><input type="reset" value="重置" class="btn btn-primary"></td>
-				<td align="right"><input type="submit" value="登录" class="btn btn-primary"></td>
+				<td align="right"><input type="submit" value="注册" class="btn btn-primary"></td>
 			</tr>
 		</table>	
 	</form>

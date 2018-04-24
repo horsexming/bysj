@@ -2,7 +2,11 @@ package com.bysj.controller;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,26 +17,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 import com.bysj.bean.Bgoods;
+import com.bysj.bean.Business;
 import com.bysj.bean.User;
+import com.bysj.servies.BusinessService;
 import com.bysj.servies.Userservice;
 
 @Controller
 public class userLogin {
 	@Autowired
 	Userservice userservice;
+	@Autowired
+	BusinessService businessService;
 	
 	@RequestMapping(value="/logins", method=RequestMethod.POST )
 	public String UserLogin(@RequestParam String username ,@RequestParam String password,@RequestParam Integer ra
-			,Model model,Map<Object,Object> map) {
+			,Model model,Map<Object,Object> map,HttpSession session) {
 		if(ra==1) {
 			User user = userservice.getUser(username, password);
-			Bgoods bgoods = userservice.getBgoods(1);
+			
 			
 			if (user!=null) {
 				model.addAttribute("user", user);
-				map.put("bgoods", bgoods);
-				System.out.println(bgoods.getGname());
+				session.setAttribute("users", user);
+				List<Bgoods>list = new ArrayList<>();
+					list = userservice.getBgoods();					
+					
+				
+				map.put("bgoods", list);
 				return "login";
 			}else {
 				
@@ -40,13 +53,16 @@ public class userLogin {
 				return "index";
 			}
 			
-		}
-		else {
+		}else {
+			System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 			
-			User user = userservice.getUser(username, password);
-			if (user!=null) {
-				model.addAttribute("user", user);
-				return "login";
+			Business business = businessService.getbusiness(username, password);
+			
+			if (business!=null) {
+				model.addAttribute("Budoods",businessService.getBgoods(business.getUsername()));
+				session.setAttribute("business", business);
+				session.setAttribute("buname", business.getUsername());
+				return "businessLogin";
 			}else {
 				
 				model.addAttribute("user", "用户名或密码错误");

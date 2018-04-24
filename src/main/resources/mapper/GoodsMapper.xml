@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bysj.dao.GoodsMapper">
+	 <select id="getBgoods" resultType="com.bysj.bean.Bgoods" parameterType="java.lang.Integer">
+	 	select* from bgoods where id=#{id}
+	 </select>
+	 
+	 <select id="getShop" resultType="com.bysj.bean.Shop" parameterType="java.lang.Integer">
+	 	select* from shop  where Suser in(
+	 	select username from user where id=#{id}
+	 	)
+	 </select>
+	 
+	 <delete id="deleteShop" parameterType="java.lang.Integer">
+	 	delete from shop where id=#{id}
+	 </delete>
+	 
+	 
+	 
+</mapper>

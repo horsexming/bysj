@@ -1,13 +1,14 @@
-package com.bysj.bean;
+package com.bysj.model;
 
-public class Bgoods {
+import com.bysj.bean.Business;
+
+public class BusinessFile {
 	private Integer id;
 	private String Gname;
 	private double Gprice;
 	private String Gcategory;
 	private Integer Gumber;
-	private String Gpicture;
-	private String Business;
+	private Business Business;
 
 	public Integer getId() {
 		return id;
@@ -49,19 +50,11 @@ public class Bgoods {
 		Gumber = gumber;
 	}
 
-	public String getGpicture() {
-		return Gpicture;
-	}
-
-	public void setGpicture(String gpicture) {
-		Gpicture = gpicture;
-	}
-
-	public String getBusiness() {
+	public Business getBusiness() {
 		return Business;
 	}
 
-	public void setBusiness(String business) {
+	public void setBusiness(Business business) {
 		Business = business;
 	}
 
