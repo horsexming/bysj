@@ -35,7 +35,7 @@
 			</tr>
 			<tr><td>&nbsp;</td><tr>
 			<tr>
-				<td align="center"><input  type="radio" name="ra" value="1" />淘宝者</td>
+				<td align="center"><input  type="radio" name="ra" value="1" checked="checked"/>淘宝者</td>
 				<td align="center"><input  type="radio" name="ra" value="2" />售卖者</td>
 			</tr>
 			<tr><td>&nbsp;</td><tr>

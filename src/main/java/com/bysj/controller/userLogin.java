@@ -23,6 +23,8 @@ import com.bysj.bean.Business;
 import com.bysj.bean.User;
 import com.bysj.servies.BusinessService;
 import com.bysj.servies.Userservice;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 @Controller
 public class userLogin {
@@ -32,7 +34,8 @@ public class userLogin {
 	BusinessService businessService;
 	
 	@RequestMapping(value="/logins", method=RequestMethod.POST )
-	public String UserLogin(@RequestParam String username ,@RequestParam String password,@RequestParam Integer ra
+	public String UserLogin(@RequestParam String username ,@RequestParam(value="pn",defaultValue="1")Integer pn
+			,@RequestParam String password,@RequestParam Integer ra
 			,Model model,Map<Object,Object> map,HttpSession session) {
 		if(ra==1) {
 			User user = userservice.getUser(username, password);
@@ -59,7 +62,11 @@ public class userLogin {
 			Business business = businessService.getbusiness(username, password);
 			
 			if (business!=null) {
-				model.addAttribute("Budoods",businessService.getBgoods(business.getUsername()));
+				PageHelper.startPage(pn, 5);
+				List<Bgoods>list = businessService.getBgoods(business.getUsername());
+				PageInfo<Bgoods>page = new PageInfo<Bgoods>(list,5);
+				model.addAttribute("pageInfo", page);
+				model.addAttribute("Budoods",list);
 				session.setAttribute("business", business);
 				session.setAttribute("buname", business.getUsername());
 				return "businessLogin";

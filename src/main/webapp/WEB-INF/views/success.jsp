@@ -22,7 +22,7 @@
 </head>
 <body>
 <input type="hidden" value="${login}" id="uname">
-<img src="<%=request.getContextPath() %>/static/goods/1.7.jpg" width="100" height="75">
+<img src="<%=request.getContextPath() %>/image/1.7.jpg" width="100" height="75">
 success
 </body>
 </html>

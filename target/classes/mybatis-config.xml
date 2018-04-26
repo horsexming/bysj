@@ -6,5 +6,10 @@
 	<settings>
 		<setting name="mapUnderscoreToCamelCase" value="false"></setting>
 	</settings>
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<property name="reasonable" value="true"></property>
+		</plugin>
+	</plugins>
 </configuration> 
   

@@ -35,26 +35,31 @@
 			<tr>
 				<td>商品名:</td>
 				<td><input type="text" name="Gname" class="form-control"></td>
-			</tr>
+			</tr>			
 			<tr>
 				<td>商品价格:</td>
 				<td><input type="text" name="Gprice" class="form-control"></td>
-			</tr>
+			</tr>			
 			<tr>
 				<td>商品描述:</td>
 				<td><input type="text" name="Gcategory" class="form-control"></td>
-			</tr>
+			</tr>			
 			<tr>
 				<td>商品数量:</td>
 				<td><input type="text" name="Gumber" class="form-control"></td>
-			</tr>
+			</tr>		
 			<tr>
 				<td>商品图片:</td>
 				<td><input type="file" name="Gpicture" class="form-control"></td>
 			</tr>
+			<tr><td>&nbsp;</td>
 			<tr>
-				<td><input type="reset" value="重置" class="btn btn-success"></td>
-				<td><input type="submit" value="添加" class="btn btn-success"></td>
+				<td align="left">
+					<a href="<%=request.getContextPath()%>/Bpage?pn=1" class="btn btn-success">返回</a>
+				</td>
+				<td align="right">
+					<input type="submit" value="添加" class="btn btn-success">
+				</td>
 			</tr>
 		</table>	
 	</form>
