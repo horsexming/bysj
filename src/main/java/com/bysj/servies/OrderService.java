@@ -1,5 +1,7 @@
 package com.bysj.servies;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,16 @@ public class OrderService {
 		
 		orderMapper.addOrder(order);
 	}
-
+	
+	/*根据用户名查询订单信息*/
+	public List<Orders>getorders_byusername(String username){
+		
+		return orderMapper.getorders_byusername(username);
+	}
+	/*根据商家查询订单信息*/
+	public List<Orders>getorders_bybusiness(String username){
+		
+		return orderMapper.getorders_bybusiness(username);
+	}
 
 }

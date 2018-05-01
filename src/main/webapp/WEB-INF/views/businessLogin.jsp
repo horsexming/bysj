@@ -6,9 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="multipart/form-data; charset=UTF-8">
 <title>商家登录</title>
-<script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
-<link href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="static/bootstrap-3.3.7-dist/js/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/static/js/jquery-3.3.1.min.js"></script>
+<link href="<%=request.getContextPath() %>/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="<%=request.getContextPath() %>/static/bootstrap-3.3.7-dist/js/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
 	 body{      
         background-image: url(<%=request.getContextPath() %>/static/image/dianpu.jpg);      
@@ -39,10 +39,10 @@
 		</div>
 		<div class="row">
 			<div class="col-md-2">
-				<a href="#" class="btn btn-primary">个人信息</a>
+				<a href="<%=request.getContextPath() %>/selsect_business/${business.username}" class="btn btn-primary">个人信息</a>
 			</div>
 			<div class="col-md-2">
-				<a href="#" class="btn btn-primary">订单查询</a>
+				<a href="<%=request.getContextPath() %>/business_selectorder/${business.username}" class="btn btn-primary">订单查询</a>
 			</div>
 			<div class="col-md-2">
 				<a href="#" class="btn btn-primary">店铺管理</a>

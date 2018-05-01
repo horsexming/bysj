@@ -12,4 +12,6 @@ public interface BusinessMapper {
 	public List<Bgoods> getBgoods(String username);
 	public void addGoods(Bgoods bgoods);
 	public Business getBusinessByname(String username);
+	//更新个人信息
+	public void business_update(Business businee);
 }

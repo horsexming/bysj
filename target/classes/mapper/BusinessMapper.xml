@@ -17,20 +17,26 @@
 	 <select id="getBusinessByname" parameterType="String" resultType="com.bysj.bean.Business">
 	 	select* from business where username = #{username}
 	 </select>
-	 
-	 <!-- <insert id="addUser" parameterType="com.mybatis.Entity.User">
-	 	insert into user(username,password,age) values(#{username},#{password},#{age})
-	 </insert>
-	 
-	 <delete id="deleteUser" parameterType = "java.lang.Integer">
-	 	delete from user where id=#{id}
-	 </delete>
-	 
-	 <select id="isExistUserName" parameterType="com.mybatis.Entity.User">
-	 	select* from user where username = #{username}
-	 </select>
-	 
-	 <select id="findEmpByName" parameterType="java.lang.String" resultType="com.mybatis.Entity.User">
-	 	select* from user where username = #{username}
-	 </select> -->
+	<!--  更新用户信息 -->
+	<update id="business_update" parameterType="com.bysj.bean.Business">
+	 	 update business
+        <set>
+            <if test="username!=null">
+                username = #{username},
+            </if>
+            <if test="Baddress!=null">
+                Baddress = #{baddress},
+            </if>
+ 			<if test="Bphone!=null">
+                Bphone = #{bphone},
+            </if>
+            <if test="sex!=null">
+                sex = #{sex},
+            </if>
+            <if test="Bemail!=null">
+                Bemail = #{bemail},
+            </if>
+        </set>
+        where username = #{username}
+	 </update>
 </mapper>

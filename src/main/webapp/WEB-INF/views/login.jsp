@@ -94,8 +94,8 @@
 			</div>
 			<ul class="navbar fl">
 				<li><a href="user_index">首页</a></li>
-				<li><a href="<%=request.getContextPath()%>/User_message?username=${user.username }">个人信息</a></li>
-				<li><a href="#">订单查询</a></li>
+				<li><a href="<%=request.getContextPath()%>/User_message?username=${users.username }">个人信息</a></li>
+				<li><a href="<%=request.getContextPath()%>/user_select_order?username=${users.username }">订单查询</a></li>
 				<li><a href="user_helps">帮助</a></li>
 			</ul>
 		</div>
@@ -296,7 +296,7 @@
 			</div>
 			<div class="entrance fl">
 				<div class="enter">
-					<a href="User_xiugai?username=${user.username }"><i class="epngfix x1"></i>修改信息</a>
+					<a href="User_xiugai?username=${users.username }"><i class="epngfix x1"></i>修改信息</a>
 					<a href="#" onclick="getuser()"><i class="epngfix x2"></i>注册帐号</a>
 				</div>
 				<div class="enews">

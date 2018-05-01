@@ -15,6 +15,12 @@
 	 	insert into orders(oname,oaddress,opicture,obusiness,ouser)
 	 	values(#{oname},#{oaddress},#{opicture},#{obusiness},#{ouser})
 	 </insert>
-	 
-	
+	<!--  查询订单信息根据用户名 -->
+	 <select id="getorders_byusername" resultType="com.bysj.bean.Orders" parameterType="String">
+	 	select* from orders where  ouser= #{username}
+	 </select>
+	 <!--  查询订单信息根据商家名 -->
+	 <select id="getorders_bybusiness" resultType="com.bysj.bean.Orders" parameterType="String">
+	 	select* from orders where obusiness= #{username}
+	 </select>
 </mapper>

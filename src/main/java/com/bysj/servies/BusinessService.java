@@ -32,5 +32,9 @@ public class BusinessService {
 		return businessMapper.getBusinessByname(username);
 		
 	}
+	//更新个人信息
+	public void business_update(Business businee) {
+		 businessMapper.business_update(businee);
+	}
 
 }

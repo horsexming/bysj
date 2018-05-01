@@ -33,6 +33,8 @@ public class Business {
 		this.password = password;
 	}
 
+	
+
 	public String getSex() {
 		return sex;
 	}

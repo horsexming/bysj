@@ -5,10 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户基本信息</title>
-<script type="text/javascript" src="<%=request.getContextPath() %>/static/js/jquery-3.3.1.min.js"></script>
-<link href="<%=request.getContextPath() %>/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="<%=request.getContextPath() %>/static/bootstrap-3.3.7-dist/js/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>商家信息</title>
 <style type="text/css">
 	 body{      
         background-image: url(<%=request.getContextPath() %>/static/image/find.jpg);      
@@ -21,42 +18,40 @@
 	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
 	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
 	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+	
 		<tr>
 			<td><font color="blue" size="4">用户名：</font></td>
-			<td><font color="green" size="4">${usermessage.username}</font></td>
+			<td><font color="green" size="4">${Business_message.username}</font></td>
 		</tr>
 		<tr>
-			<td><font color="blue" size="4">年龄：</font></td>
-			<td><font color="green" size="4">${usermessage.age}</font></td>
+			<td><font color="blue" size="4">email：</font></td>
+			<td><font color="green" size="4">${Business_message.bemail}</font></td>
 		</tr>
 		<tr>
 			<td><font color="blue" size="4">性别：</font></td>
 			<td>
-				<c:if test="${usermessage.sex=='n'}">
+				<c:if test="${Business_message.sex=='n'}">
 					<font color="green" size="4">男</font>
 				</c:if>
-				<c:if test="${usermessage.sex=='m'}">
+				<c:if test="${Business_message.sex=='m'}">
+				
 					<font color="green" size="4">女</font>
 				</c:if>			
 			</td>
 		</tr>
 		<tr>
 			<td><font color="blue" size="4">电话：</font></td>
-			<td><font color="green" size="4">${usermessage.telephone}</font></td>
+			<td><font color="green" size="4">${Business_message.bphone}</font></td>
 		</tr>
 		<tr>
 			<td><font color="blue" size="4">地址：</font></td>
-			<td><font color="green" size="4">${usermessage.address}</font></td>
+			<td><font color="green" size="4">${Business_message.baddress}</font></td>
 		</tr>
 		<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
 		<tr>
-			<td><a href="User_xiugai?username=${usermessage.username}" class="btn btn-primary">修改</a></td>
-			<td><a href="user_index" class="btn btn-primary">返回</a></td>
+			<td><a href="<%=request.getContextPath() %>/business_update/${Business_message.username}" class="btn btn-primary">修改</a></td>
+			<td><a href="<%=request.getContextPath() %>/Business_index" class="btn btn-primary">返回</a></td>
 		</tr>
-	</table>
+		</table>
 </body>
 </html>

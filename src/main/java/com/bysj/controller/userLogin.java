@@ -21,8 +21,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bysj.bean.Bgoods;
 import com.bysj.bean.Business;
+import com.bysj.bean.Orders;
 import com.bysj.bean.User;
 import com.bysj.servies.BusinessService;
+import com.bysj.servies.OrderService;
 import com.bysj.servies.Userservice;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -34,7 +36,8 @@ public class userLogin {
 	Userservice userservice;
 	@Autowired
 	BusinessService businessService;
-	
+	@Autowired
+	OrderService orderService;
 	@RequestMapping(value="/logins", method=RequestMethod.POST )
 	public String UserLogin(@RequestParam String username ,@RequestParam(value="pn",defaultValue="1")Integer pn
 			,@RequestParam String password,@RequestParam Integer ra
@@ -54,7 +57,6 @@ public class userLogin {
 			}
 			
 		}else {
-			System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 			
 			Business business = businessService.getbusiness(username, password);
 			
@@ -164,6 +166,14 @@ public class userLogin {
 		session.setAttribute("usermessage", userservice.selectUserBy_Name(username));
 		
 		return "/user/user_message";
+	}
+	
+	//查询订单信息
+	@RequestMapping("/user_select_order")
+	private String user_select_order(@RequestParam("username")String username,Model model) {		
+		List<Orders> list =orderService.getorders_byusername(username);
+		model.addAttribute("order_message",list);
+		return "/user/user_select_order";
 	}
 
 }
