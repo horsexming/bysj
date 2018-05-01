@@ -16,7 +16,18 @@
 	 <delete id="deleteShop" parameterType="java.lang.Integer">
 	 	delete from shop where id=#{id}
 	 </delete>
-	 
-	 
+	 <!-- 商品模糊查询 -->
+	 <select id="select_goods_byname" resultType="com.bysj.bean.Bgoods" parameterType="java.lang.String">
+	 	select* from bgoods where Gname LIKE CONCAT(CONCAT('%',#{Gname}),'%')
+	 </select>
+	  <!-- 商品模糊查询 -->
+	 <select id="select_byname" resultType="com.bysj.bean.Bgoods" parameterType="java.lang.String">
+	 	select* from bgoods where Gname LIKE CONCAT(CONCAT('%',#{Gname}),'%')
+	 </select>
+	<!--  添加商品到购物小车 -->
+	 <insert id="user_addgoods_shop" parameterType="com.bysj.bean.Shop">
+	 	insert into shop(Sname,Sprice,Spicture,Suser,Saddress) 
+	 	values(#{sname},#{sprice},#{spicture},#{suser},#{saddress})
+	 </insert>
 	 
 </mapper>

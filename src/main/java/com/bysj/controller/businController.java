@@ -6,6 +6,7 @@ import java.io.File;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -51,8 +52,9 @@ public class businController {
             String path = request.getServletContext().getRealPath("/");
             System.out.println(path);
             //上传文件名
-            String filename = Gpicture.getOriginalFilename();
-            Gpicture.transferTo(new File(path+"image/"+filename));
+            String uuid = UUID.randomUUID().toString().substring(0, 5);
+            String filename = Gpicture.getOriginalFilename()+uuid;
+            Gpicture.transferTo(new File(path+"static/image/"+filename));
             Bgoods bgoods = new Bgoods();
             bgoods.setGname(businessFile.getGname());
             bgoods.setBusiness(session.getAttribute("buname").toString());

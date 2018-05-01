@@ -22,6 +22,28 @@
 	 	select username from user where id = #{id}
 	 </select>
 	 
+	 <update id="user_update" parameterType="com.bysj.bean.User">
+	 	 update user
+        <set>
+            <if test="username!=null">
+                username = #{username},
+            </if>
+            <if test="age!=null">
+                age = #{age},
+            </if>
+ 			<if test="address!=null">
+                address = #{address},
+            </if>
+            <if test="sex!=null">
+                sex = #{sex},
+            </if>
+            <if test="telephone!=null">
+                telephone = #{telephone},
+            </if>
+        </set>
+        where username = #{username}
+	 </update>
+	 
 	 <!-- <insert id="addUser" parameterType="com.mybatis.Entity.User">
 	 	insert into user(username,password,age) values(#{username},#{password},#{age})
 	 </insert>

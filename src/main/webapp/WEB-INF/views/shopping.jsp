@@ -53,8 +53,8 @@
     			<td>&nbsp;</td>
     			<td>${shop.sprice}</td>
     			<td>&nbsp;</td>
-    			<td>${shop.saddress}</td>
-    			<td>&nbsp;</td>
+    			<td>${shop.saddress}</td>   			
+    			<td>${Shop_message}</td>
     			<td><a href="goods/${shop.spicture}"><img src="<%=request.getContextPath() %>/static/goods/${shop.spicture}" width="100" height="75"></a></td>   		
     			<td><a href="<%=request.getContextPath() %>/Buygoods/${shop.spicture}">购买</a></td>
     			<td><a href="<%=request.getContextPath() %>/Deletegoods/${shop.id}" onclick="javascript:return del(); ">删除</a></td>
@@ -63,6 +63,9 @@
     			<td>&nbsp;</td>	
     		</tr>
     	</c:forEach>
+    	<tr>
+    		<td align="right"><a href="<%=request.getContextPath() %>/user_index">返回</a></td>
+    	</tr>
 	</table>
 </body>
 </html>

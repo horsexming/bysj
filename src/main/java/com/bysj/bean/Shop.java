@@ -5,7 +5,7 @@ public class Shop {
 	private String Sname;
 	private double Sprice;
 	private String Spicture;
-	private User Suser;
+	private String Suser;
 	private String Saddress;
 
 	public String getSaddress() {
@@ -48,12 +48,14 @@ public class Shop {
 		Spicture = spicture;
 	}
 
-	public User getSuser() {
+	public String getSuser() {
 		return Suser;
 	}
 
-	public void setSuser(User suser) {
+	public void setSuser(String suser) {
 		Suser = suser;
 	}
+
+	
 
 }

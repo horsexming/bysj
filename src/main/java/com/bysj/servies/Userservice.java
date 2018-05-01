@@ -37,9 +37,19 @@ public class Userservice {
 		}
 		
 	}
+	//通过姓名查找用户
+	public User selectUserBy_Name(String name){
+		return userMapper.findEmpByName(name);
+		
+	}
 	
 	public String getuser(int id) {
 		return userMapper.getuser(id);
+	}
+	
+	//更新数据
+	public void user_update(User user) {
+		userMapper.user_update(user);
 	}
 
 }

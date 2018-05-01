@@ -2,6 +2,7 @@ package com.bysj.servies;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,22 @@ public class GoodsService {
 		goodsMapper.deleteShop(id);
 	}
 	
-	//添加商品到购物车
+	//商品模糊查询
+	public List<Bgoods> select_goods_byname(String Gname) {
+		List<Bgoods> list = goodsMapper.select_goods_byname(Gname);
+		
+		return list;
+	}
+	
+	public List<Bgoods> select_byname(@Param("Gname")String Gname){
+		List<Bgoods> list = goodsMapper.select_goods_byname(Gname);
+		
+		return list;
+	}
+	
+	//添加商品到购物小车
+	public void user_addgoods_shop(Shop shop) {
+		goodsMapper.user_addgoods_shop(shop);
+	}
 	
 }

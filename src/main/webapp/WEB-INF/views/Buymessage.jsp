@@ -39,7 +39,7 @@
 		</tr>
 		<tr>
 			<td>商家名</td>
-			<td><input type="text" name="obusiness" value="${obusiness.username}" readonly="readonly"></td>
+			<td><input type="text" name="obusiness" value="${ogoods.business}" readonly="readonly"></td>
 		</tr>
 		<tr>
 			<td>填写收件地址</td>
