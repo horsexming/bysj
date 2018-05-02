@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.bysj.bean.Bgoods;
 
 import com.bysj.bean.Shop;
+import com.bysj.bean.Xgoods;
 import com.bysj.dao.GoodsMapper;
 
 @Service("goodsService")
@@ -47,4 +48,22 @@ public class GoodsService {
 		goodsMapper.user_addgoods_shop(shop);
 	}
 	
+	//下架商品
+	public void out_bgoods(int id) {
+		goodsMapper.out_bgoods(id);
+	}
+	
+	//下架商品添加到下架表
+	public void add_xgoods(Bgoods xgoods) {
+			goodsMapper.add_xgoods(xgoods);
+	}
+		//下架商品查询
+	public List<Xgoods> select_xgoods(String username) {
+		return goodsMapper.select_xgoods(username);
+		
+	}
+	//删除下架商品
+	public void delete_xgoods(int id) {
+		goodsMapper.delete_xgoods(id);
+	}
 }

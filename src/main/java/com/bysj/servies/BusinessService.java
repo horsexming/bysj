@@ -32,9 +32,23 @@ public class BusinessService {
 		return businessMapper.getBusinessByname(username);
 		
 	}
+	//注册验证
+	public int  findEmpByName(String username){
+		if(businessMapper.getBusinessByname(username)!=null){
+			
+			return 1;
+		}else{
+			return 0;
+		}
+		
+	}
 	//更新个人信息
 	public void business_update(Business businee) {
 		 businessMapper.business_update(businee);
+	}
+	//注册
+	public void add_business(Business business) {
+		businessMapper.add_business(business);
 	}
 
 }

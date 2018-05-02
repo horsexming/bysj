@@ -39,4 +39,11 @@
         </set>
         where username = #{username}
 	 </update>
+	 <!-- 注册 -->
+	 <insert id="add_business" parameterType="com.bysj.bean.Business">
+	 	insert into business(username,password,sex,Bemail,Bphone,Baddress) 
+	 	values(#{username},#{password},#{sex},#{bemail},#{bphone},#{baddress})
+	 </insert>
+	
+	 
 </mapper>

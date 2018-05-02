@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import com.bysj.bean.Bgoods;
 import com.bysj.bean.Orders;
 import com.bysj.bean.Shop;
+import com.bysj.bean.Xgoods;
 
 public interface GoodsMapper {
 	
@@ -25,5 +26,15 @@ public interface GoodsMapper {
 	public List<Bgoods> select_byname(@Param("Gname")String Gname);
 	//商品加入购物小车
 	public void user_addgoods_shop(Shop shop);
+	
+	//下架商品
+	public void out_bgoods(int id);
+	//下架商品添加到下架表
+	public void add_xgoods(Bgoods xgoods);
+	//下架商品添查询
+	public List<Xgoods> select_xgoods(String username);
+	//删除下架商品
+	public void delete_xgoods(int id);
+	
 
 }

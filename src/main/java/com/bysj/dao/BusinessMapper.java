@@ -14,4 +14,8 @@ public interface BusinessMapper {
 	public Business getBusinessByname(String username);
 	//更新个人信息
 	public void business_update(Business businee);
+	
+	//注册
+	public void add_business(Business business);
+	
 }

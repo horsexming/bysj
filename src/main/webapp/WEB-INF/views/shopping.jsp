@@ -55,7 +55,7 @@
     			<td>&nbsp;</td>
     			<td>${shop.saddress}</td>   			
     			<td>${Shop_message}</td>
-    			<td><a href="goods/${shop.spicture}"><img src="<%=request.getContextPath() %>/static/goods/${shop.spicture}" width="100" height="75"></a></td>   		
+    			<td><a href="goods/${shop.spicture}"><img src="<%=request.getContextPath() %>/static/image/${shop.spicture}" width="100" height="75"></a></td>   		
     			<td><a href="<%=request.getContextPath() %>/Buygoods/${shop.spicture}">购买</a></td>
     			<td><a href="<%=request.getContextPath() %>/Deletegoods/${shop.id}" onclick="javascript:return del(); ">删除</a></td>
     		</tr>

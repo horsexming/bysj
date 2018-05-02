@@ -25,6 +25,15 @@
 			}			
 		
 	});
+		
+		function del() {
+			var msg = "您真的确定要下架吗？\n\n请确认！";
+			if (confirm(msg)==true){
+				return true;
+			}else{
+					return false;
+				}
+		}
 	</script>
 </head>
 <body>
@@ -45,7 +54,7 @@
 				<a href="<%=request.getContextPath() %>/business_selectorder/${business.username}" class="btn btn-primary">订单查询</a>
 			</div>
 			<div class="col-md-2">
-				<a href="#" class="btn btn-primary">店铺管理</a>
+				<a href="business_xgoods/${business.username}" class="btn btn-primary">下架商品管理</a>
 			</div>
 			<div class="col-md-2">
 				<a href="<%=request.getContextPath() %>/addGoods" class="btn btn-primary" class="btn btn-primary">添加商品</a>
@@ -69,7 +78,7 @@
 		    			<td>${Budoods.gprice}</td>   			
 		    			<td>${Budoods.gcategory}</td>   			
 		    			<td>${Budoods.gumber}</td>
-		    			<td><a href="#" class="btn btn-danger">下架</a></td>
+		    			<td><a href="out_bdoods/${Budoods.id}" class="btn btn-danger" onclick="javascript:return del();">下架</a></td>
 					</tr>				
 				</c:forEach>				
 			</table>

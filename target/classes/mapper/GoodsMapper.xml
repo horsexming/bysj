@@ -29,5 +29,20 @@
 	 	insert into shop(Sname,Sprice,Spicture,Suser,Saddress) 
 	 	values(#{sname},#{sprice},#{spicture},#{suser},#{saddress})
 	 </insert>
-	 
+	 <!--  下架商品 -->
+	 <delete id="out_bgoods" parameterType="java.lang.Integer">
+	 	delete from bgoods where id=#{id}
+	 </delete>
+	  <insert id="add_xgoods" parameterType="com.bysj.bean.Bgoods">
+	 	insert into xgoods(Gname,Gprice,Gcategory,Gumber,Gpicture,Business) 
+	 	values(#{Gname},#{Gprice},#{Gcategory},#{Gumber},#{Gpicture},#{Business})
+	 </insert>
+	  <!--下架 商品查询 -->
+	 <select id="select_xgoods" resultType="com.bysj.bean.Xgoods" parameterType="java.lang.String">
+	 	select* from xgoods where Business =#{username} 
+	 </select>
+	  <!--  删除下架商品 -->
+	 <delete id="delete_xgoods" parameterType="java.lang.Integer">
+	 	delete from xgoods where id=#{id}
+	 </delete>
 </mapper>

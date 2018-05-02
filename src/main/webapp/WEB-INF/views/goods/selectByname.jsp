@@ -108,7 +108,7 @@
 					  	</c:if>					    
 					    <li><a href="<%=request.getContextPath()%>/select_page?pn=${pageInfo.pages}" aria-label="Previous">尾页</a></li>
 					  <li>
-					  	<a href="user_gouout">返回</a>
+					  	<a href="user_index">返回</a>
 					  </li>
 					  </ul>
 				</nav>

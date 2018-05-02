@@ -3,7 +3,7 @@ package com.bysj.controller;
 
 
 import java.io.File;
-
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -19,18 +19,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bysj.bean.Bgoods;
 import com.bysj.bean.Business;
 import com.bysj.bean.Orders;
+import com.bysj.bean.User;
+import com.bysj.bean.Xgoods;
 import com.bysj.model.BusinessFile;
 import com.bysj.servies.BusinessService;
+import com.bysj.servies.GoodsService;
 import com.bysj.servies.OrderService;
 import com.bysj.servies.Userservice;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.mysql.cj.api.Session;
 
 @Controller
 public class businController {
@@ -40,6 +44,8 @@ public class businController {
 	BusinessService businessService;
 	@Autowired
 	OrderService orderService;
+	@Autowired
+	GoodsService goodsService;
 	//点击商品添加跳转
 	@RequestMapping("/addGoods")
 	public String addGoods() {		
@@ -154,5 +160,73 @@ public class businController {
 			model.addAttribute("order_message",list);
 			return "/business/business_selectorder";
 		}
+		
+		//判断用户是否存在
+		
+		@ResponseBody 
+		@RequestMapping(value = "/check_businessName", produces = "application/json; charset=utf-8")
+			public Integer checkUserName(String username)
+					throws IOException {
+			System.out.println(username);
+			System.out.println(businessService.findEmpByName(username));
+				return  businessService.findEmpByName(username);
+				
+
+			}
+		//用户注册
+		@RequestMapping(value="/Business_Registers", method=RequestMethod.POST)
+		public String userShow(Business business,Model model) {	
+			businessService.add_business(business);
+			model.addAttribute("user", business);
+			return "userLogin";
+		}
+		
+		//商品下架
+		@RequestMapping("/out_bdoods/{id}")
+		public String out_bgoods(@PathVariable("id")Integer id) {
+			Bgoods bgoods = goodsService.getBgoods(id);
+			goodsService.add_xgoods(bgoods);
+			goodsService.out_bgoods(id);
+			return "redirect:/Bpage";
+		}
+		
+		//下架商品管理
+		@RequestMapping("/business_xgoods/{username}")
+		public String business_xgoods(@PathVariable("username")String username,Model model
+				,@RequestParam(value="pn",defaultValue="1")Integer pn,HttpSession session) {
+			System.out.println(username);
+			PageHelper.startPage(pn, 3);
+			List<Xgoods> xgoods = goodsService.select_xgoods(username); 
+			PageInfo<Xgoods>page = new PageInfo<Xgoods>(xgoods,3);
+			session.setAttribute("Xusername", username);
+			model.addAttribute("pageInfo", page);
+			model.addAttribute("xgoods",xgoods);
+			return "/business/business_xgoods";		
+			
+		}
+		//下架商品分页
+		@RequestMapping("/select_Xdoods_page")
+		public String select_Xdoods_page(@RequestParam(value="pn",defaultValue="1")Integer pn
+				,Model model,HttpSession session) {
+			PageHelper.startPage(pn, 3);
+			String username = session.getAttribute("Xusername").toString();
+			List<Xgoods> xgoods = goodsService.select_xgoods(username); 
+			PageInfo<Xgoods>page = new PageInfo<Xgoods>(xgoods,3);
+			model.addAttribute("pageInfo", page);
+			model.addAttribute("xgoods",xgoods);
+			return "/business/business_xgoods";
+		}
+		
+		//删除下架商品
+		@RequestMapping("/delete_xboods/{id}")		
+		public String delete_xboods(@PathVariable("id")Integer id) {
+			goodsService.delete_xgoods(id);
+			return "redirect:/select_Xdoods_page";
+		}
+		
+		//下架商品上架
+		
+		
+		
 		
 }

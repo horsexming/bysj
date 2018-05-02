@@ -120,12 +120,12 @@ public class userLogin {
 		
 		return "shopRegisters";
 	}
-	
+	//用户注册
 	@RequestMapping(value="/shopRegisters", method=RequestMethod.POST)
 	public String userShow(User user,Model model) {	
 		userservice.addUser(user);
 		model.addAttribute("user", user);
-		return "index";
+		return "userLogin";
 	}
 	
 	//判断用户是否存在
@@ -134,8 +134,6 @@ public class userLogin {
 	@RequestMapping(value = "/checkName", produces = "application/json; charset=utf-8")
 		public Integer checkUserName(String username)
 				throws IOException {
-		/*Integer i = new Integer(1);
-		return i;*/
 		System.out.println(username);
 		System.out.println(userservice.findEmpByName(username));
 			return  userservice.findEmpByName(username);
