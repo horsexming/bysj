@@ -1,9 +1,10 @@
 package com.bysj.controller;
 
-
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,8 @@ import com.bysj.servies.Userservice;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
-
 @Controller
 public class goodsController {
-	
 	@Autowired
 	GoodsService goodsService;
 	@Autowired
@@ -74,13 +73,16 @@ public class goodsController {
 		System.out.println(Gpicture);
 		String Gpictures = Gpicture+".jpg";
 		map.put("ogoods", orderService.getBgoods(Gpictures));
+		System.out.println(orderService.getBgoods(Gpictures));
 		return "Buymessage";
 	}
 	
 	@RequestMapping(value="/BuyShopping",method=RequestMethod.POST)
 	public String BuyShoppings(Orders orders,Map<Object, Object> map,HttpSession session) {
 		System.out.println("bbbb"+orders.getOname()+orders.getOaddress()+orders.getObusiness());
-		orders.setOuser(userservice.getuser((int)(session.getAttribute("id"))));		
+		orders.setOuser(userservice.getuser((int)(session.getAttribute("id"))));
+		String uuid = UUID.randomUUID().toString().substring(0, 10);
+		orders.setOnumber(uuid);
 		orderService.addOrder(orders);
 		List<Shop>list = goodsService.getShop((int)(session.getAttribute("id")));
 		
@@ -116,12 +118,10 @@ public class goodsController {
 			shop.setSaddress(user.getAddress());
 			shop.setSuser(user.getUsername());
 			goodsService.user_addgoods_shop(shop);
-			session.setAttribute("addmessage", "aa");
-		}else {
-			session.setAttribute("addmessage", "bb");
+			
 		}
 		
-		return"redirect:/select_page";
+		return"redirect:/select_Tspage";
 	}
 	
 	//按照商品名模糊查询
@@ -166,21 +166,40 @@ public class goodsController {
 		PageInfo<Bgoods>page = new PageInfo<Bgoods>(list,5);
  		model.addAttribute("pageInfo", page);
 		if(list.isEmpty()) {
-			return "/goods/selectfile";		
+			return "/goods/user_selecfail";		
 		}else {
 			model.addAttribute("bgoodsByname", list);
 			session.setAttribute("Gname_page", Gname);
 			System.out.println(list);
-			return "/goods/selectByname";
+			return "/goods/select_usergoodsByname";
 		}
 		
 	}
-	/*@RequestMapping(value="/Buygoods/{gpictur}",method=RequestMethod.POST)
-	public String BuyShops(@PathVariable("gpictur")String Gpictur,HttpSession session,Map<Object, Object>map) {
+	
+	@RequestMapping("/select_Userpage")
+	public String select_ds_bynamepage(@RequestParam(value="pn",defaultValue="1")Integer pn
+			,Model model,HttpSession session) {
+		PageHelper.startPage(pn, 5);
+		String Gname = session.getAttribute("Gname_page").toString();
+		List<Bgoods> list =  goodsService.select_goods_byname(Gname);
+		PageInfo<Bgoods>page = new PageInfo<Bgoods>(list,5);
+		model.addAttribute("pageInfo", page);
+		model.addAttribute("bgoodsByname", list);
 		
-		List<Shop>list = goodsService.getShop((int)(session.getAttribute("id")));
-		map.put("shop", list);
-		return"shopping";
-	}*/
+		return "/goods/select_usergoodsByname";
+	}
+	//添加提示
+	@RequestMapping("/select_Tspage")
+	public String select_dss_bynamepage(@RequestParam(value="pn",defaultValue="1")Integer pn
+			,Model model,HttpSession session,HttpServletRequest request) {
+		PageHelper.startPage(pn, 5);
+		String Gname = session.getAttribute("Gname_page").toString();
+		List<Bgoods> list =  goodsService.select_goods_byname(Gname);
+		PageInfo<Bgoods>page = new PageInfo<Bgoods>(list,5);
+		model.addAttribute("pageInfo", page);
+		model.addAttribute("bgoodsByname", list);
+		request.setAttribute("aa","aa");
+		return "/goods/select_usergoodsByname";
+	}
 
 }

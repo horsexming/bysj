@@ -66,4 +66,9 @@ public class GoodsService {
 	public void delete_xgoods(int id) {
 		goodsMapper.delete_xgoods(id);
 	}
+	
+	//查询下架商品
+		public Xgoods getXgoods(int id) {
+			return goodsMapper.getXgoods(id);
+		}
 }

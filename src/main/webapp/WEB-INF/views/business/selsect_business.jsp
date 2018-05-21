@@ -16,7 +16,7 @@
 <body>
 	<table align="center">
 	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
-	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>个人信息</td></tr>
 	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
 	
 		<tr>

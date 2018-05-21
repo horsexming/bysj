@@ -7,8 +7,17 @@ public class Orders {
 	private String opicture;
 	private String obusiness;
 	private String ouser;
+	private String onumber;
 
 	
+
+	public String getOnumber() {
+		return onumber;
+	}
+
+	public void setOnumber(String onumber) {
+		this.onumber = onumber;
+	}
 
 	public String getOuser() {
 		return ouser;

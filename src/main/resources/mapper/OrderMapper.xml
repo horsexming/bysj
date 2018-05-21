@@ -12,8 +12,8 @@
 	 </select>
 	 
 	 <insert id="addOrder" parameterType="com.bysj.bean.Orders">
-	 	insert into orders(oname,oaddress,opicture,obusiness,ouser)
-	 	values(#{oname},#{oaddress},#{opicture},#{obusiness},#{ouser})
+	 	insert into orders(oname,oaddress,opicture,obusiness,ouser,onumber)
+	 	values(#{oname},#{oaddress},#{opicture},#{obusiness},#{ouser},#{onumber})
 	 </insert>
 	<!--  查询订单信息根据用户名 -->
 	 <select id="getorders_byusername" resultType="com.bysj.bean.Orders" parameterType="String">

@@ -36,5 +36,8 @@ public interface GoodsMapper {
 	//删除下架商品
 	public void delete_xgoods(int id);
 	
+	//查询下架商品
+	public Xgoods getXgoods(int id);
+	
 
 }

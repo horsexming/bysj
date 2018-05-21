@@ -13,11 +13,15 @@
 <body>
 	<table align="center" class="table">
 		<tr>
+			<td ></td>
+			
+		</tr>
+		<tr>
 			<td colspan="2">&nbsp;</td>
 			<td colspan="2">名称</td>
 			<td colspan="2">地址</td>
 			<td colspan="2">商家</td>
-			<td colspan="2">图片</td>
+			<td colspan="2">订单编号</td>
 			<td><a href="<%=request.getContextPath() %>/user_index">返回</a></td>
 		</tr>
 		<c:forEach items="${order_message}" var="ordermessage">
@@ -29,8 +33,7 @@
 			
 				<td colspan="2">${ordermessage.obusiness}</td>
 			
-				<td colspan="2"><img src="<%=request.getContextPath()%>/static/goods/${ordermessage.opicture}" width="100" height="75"></td>
-			
+				<td colspan="2">${ordermessage.onumber}</td>
 		</c:forEach>
 	</table>
 </body>

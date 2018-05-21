@@ -80,7 +80,7 @@
 			<tr><td>&nbsp;</td></tr>
 			
 			<tr>
-				<td><input type="reset" value="重置" class="btn btn-primary"></td>
+				<td><a href="<%=request.getContextPath() %>/ubindex" class="btn btn-primary">返回</a></td>
 				<td align="right"><input type="submit" value="注册" class="btn btn-primary"></td>
 			</tr>
 		</table>	

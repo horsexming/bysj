@@ -74,7 +74,7 @@
 		</div>
 		<div class="search fl">
 			<div class="sch-form">
-				<form action="select_goods_byname">
+				<form action="select_byname">
 					<input type="text" class="stext" name="Gname">
 					<input type="submit" class="sbtn" value="搜索">
 				</form>

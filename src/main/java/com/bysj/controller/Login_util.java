@@ -32,8 +32,8 @@ public class Login_util {
 	}
 	@RequestMapping("/user_out")
 	public String user_out(HttpSession session) {
-		if(session.getAttribute("user")!=null) {
-			session.removeAttribute("user");
+		if(session.getAttribute("users")!=null) {
+			session.removeAttribute("users");
 		}
 		if(session.getAttribute("business")!=null) {
 			session.removeAttribute("business");
@@ -41,9 +41,18 @@ public class Login_util {
 		return "redirect:/index.jsp";
 	}
 	
+	@RequestMapping("/ubindex")
+	public String ub_index(HttpSession session) {
+		
+			return "redirect:/index.jsp";
+		
+	}
+	
 	@RequestMapping("/user_index")
-	public String user_index() {		
-		return "login";
+	public String user_index(HttpSession session) {
+		
+			return "login";
+		
 	}
 	@RequestMapping("/user_gouout")
 	public String user_gouout() {

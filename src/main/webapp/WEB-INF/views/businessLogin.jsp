@@ -59,6 +59,9 @@
 			<div class="col-md-2">
 				<a href="<%=request.getContextPath() %>/addGoods" class="btn btn-primary" class="btn btn-primary">添加商品</a>
 			</div>
+			<div class="col-md-2">
+				<a href="<%=request.getContextPath() %>/user_out" class="btn btn-primary" class="btn btn-primary">退出</a>
+			</div>
 			<div class="col-md-2 col-md-offset-11">
 				<font color="blue">欢迎商家：</font>${business.username}
 			</div>

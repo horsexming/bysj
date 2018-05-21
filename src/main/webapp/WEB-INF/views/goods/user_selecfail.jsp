@@ -11,10 +11,10 @@
 		<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
 		<tr>
 			<td>
-				<h2>没有找到您要查找的宝贝</h2>
+				<h2>没有查到您想要的商品！！！</h2>
 			</td>
 			<td>
-				 <a href="<%=request.getContextPath() %>/ubindex">返回</a>
+				 <a href="<%=request.getContextPath() %>/user_index">返回</a>
 			</td>
 		</tr>
 	 </table>

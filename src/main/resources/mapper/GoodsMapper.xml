@@ -45,4 +45,8 @@
 	 <delete id="delete_xgoods" parameterType="java.lang.Integer">
 	 	delete from xgoods where id=#{id}
 	 </delete>
+	  <!--查询 下架商品按照id-->
+	 <select id="getXgoods" resultType="com.bysj.bean.Xgoods" parameterType="java.lang.Integer">
+	 	select* from xgoods where id =#{id} 
+	 </select>
 </mapper>

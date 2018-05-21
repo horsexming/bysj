@@ -15,8 +15,19 @@
         background-size:cover;    
      }            
 </style>
+<script type="text/javascript">
+		$(function() {		
+			var uname = $("#uname").val();		
+			var username= document.getElementById("uname");
+			if(username.value.trim()!=""){
+				alert("添加成功");		
+			}
+					
+	});
+	</script>
 </head>
 <body>
+<input type="hidden" value="${aa}" id="uname">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -46,6 +57,7 @@
     				名称:${bgoods.gname}<br>
     				商品价格:${bgoods.gprice}<br>
     				商品描述:${bgoods.gcategory}<br>
+    				<a href="user_byshop/${bgoods.id}">加入购物车</a>
     			</td>
     			<td>&nbsp;</td>
     			<td>&nbsp;</td>
@@ -68,10 +80,10 @@
 			<div class="col-md-12 col-md-offset-6">
 				<nav aria-label="Page navigation">
 					  <ul class="pagination">
-					  	<li><a href="<%=request.getContextPath()%>/select_page?pn=1" aria-label="Previous">首页</a></li>
+					  	<li><a href="<%=request.getContextPath()%>/select_Userpage?pn=1" aria-label="Previous">首页</a></li>
 					  	<c:if test="${pageInfo.hasPreviousPage}">
 						  	<li>
-								<a href="<%=request.getContextPath()%>/select_page?pn=${pageInfo.pageNum-1}" aria-label="Previous">
+								<a href="<%=request.getContextPath()%>/select_Userpage?pn=${pageInfo.pageNum-1}" aria-label="Previous">
 								<span aria-hidden="true">&laquo;</span>
 								</a>
 						    </li>
@@ -81,19 +93,19 @@
 							    <li class="active"><a href="#">${page_Number}</a></li>
 							</c:if>					    		
 							<c:if test="${page_Number!=pageInfo.pageNum}">
-							    <li><a href="<%=request.getContextPath()%>/select_page?pn=${page_Number}">${page_Number}></a></li>
+							    <li><a href="<%=request.getContextPath()%>/select_Userpage?pn=${page_Number}">${page_Number}></a></li>
 							</c:if>					  					    	
 						</c:forEach>
 					    <c:if test="${pageInfo.hasNextPage}">
 							<li>
-								<a href="<%=request.getContextPath()%>/select_page?pn=${pageInfo.pageNum+1}" aria-label="Next">
+								<a href="<%=request.getContextPath()%>/select_Userpage?pn=${pageInfo.pageNum+1}" aria-label="Next">
 									<span aria-hidden="true">&raquo;</span>
 								</a>
 							</li>
 					  	</c:if>					    
-					    <li><a href="<%=request.getContextPath()%>/select_page?pn=${pageInfo.pages}" aria-label="Previous">尾页</a></li>
+					    <li><a href="<%=request.getContextPath()%>/select_Userpage?pn=${pageInfo.pages}" aria-label="Previous">尾页</a></li>
 					  <li>
-					  	<a href="ubindex">返回</a>
+					  	<a href="user_index">返回</a>
 					  </li>
 					  </ul>
 				</nav>

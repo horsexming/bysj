@@ -148,10 +148,10 @@
 								<div class="subleft">
 									<div class="item-channels">
 										<div class="channel">
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=财">招财<i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=福">引福<i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=佑">辟邪 <i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=饰">装饰 <i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=财">招财<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=福">引福<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=佑">辟邪 <i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=饰">装饰 <i> > </i></a>
 											<div class="clear"></div>
 										</div><div class="clear"></div>
 									</div>
@@ -159,37 +159,37 @@
 										<dl>
 											<dd><b>招财</b><i> > </i></dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=貔貅">貔貅</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=金蟾">金蟾</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=财">其它</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=貔貅">貔貅</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=金蟾">金蟾</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=财">其它</a>
 											</dt>
 										</dl>
 										<dl>
 											<dd><b>引福</b><i> > </i></dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=玉蝉">玉蝉</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=玉白菜">玉白菜</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=如意">如意</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=福">更多</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=玉蝉">玉蝉</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=玉白菜">玉白菜</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=如意">如意</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=福">更多</a>
 											</dt>
 										</dl>
 										<dl>
 											<dd><b>辟邪</b><i> > </i> </dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=观音">玉观音</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=玉佛">玉佛</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=关">关二爷</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=佑">更多</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=观音">玉观音</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=玉佛">玉佛</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=关">关二爷</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=佑">更多</a>
 											</dt>
 										</dl>
 										<dl>
 											<dd><b>装饰</b><i> > </i></dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=山水">山水</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=竹">玉竹</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=画">壁画</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=人">人物</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=饰">其它</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=山水">山水</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=竹">玉竹</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=画">壁画</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=人">人物</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=饰">其它</a>
 											</dt>
 										</dl>
 										<dl>
@@ -207,45 +207,45 @@
 								<div class="subleft">
 									<div class="item-channels">
 										<div class="channel">
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=镯">手镯<i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=链">手链<i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=坠">吊坠<i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=脚">脚链<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=镯">手镯<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=链">手链<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=坠">吊坠<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=脚">脚链<i> > </i></a>
 										</div>
 									</div>
 									<div class="subitems">
 										<dl>
 											<dd><b>手链</b><i> > </i></dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=生肖">生肖</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=貔貅">貔貅</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=简">简单</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=链">更多</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=生肖">生肖</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=貔貅">貔貅</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=简">简单</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=链">更多</a>
 											</dt>
 										</dl>
 										<dl>
 											<dd><b>手镯</b><i> > </i> </dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=老料">老料</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=镯">更多</a>												
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=老料">老料</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=镯">更多</a>												
 											</dt>
 										</dl>
 										<dl>
 											<dd><b>脚链</b><i> > </i> </dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=生肖">生肖</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=铃铛">铃铛</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=动物">小动物</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=链">更多</a>											
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=生肖">生肖</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=铃铛">铃铛</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=动物">小动物</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=链">更多</a>											
 											</dt>
 										</dl>
 										<dl>
 											<dd><b>吊坠</b><i> > </i> </dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=生肖">生肖</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=景">风景</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=动物">小动物</a>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=坠">更多</a>											
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=生肖">生肖</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=景">风景</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=动物">小动物</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=坠">更多</a>											
 											</dt>
 										</dl>											
 									</div>
@@ -254,22 +254,22 @@
 							</div>
 						</li>	
 						<li>
-							<h3><a href="<%=request.getContextPath()%>/select_byname?Gname=玩">玩物</a></h3>
+							<h3><a href="<%=request.getContextPath()%>/select_goods_byname?Gname=玩">玩物</a></h3>
 							<i> > </i>
 							<div class="item-sub">
 								<div class="subleft">
 									<div class="item-channels">
 										<div class="channel">
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=玩">小玩件</a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=玩">大玩件</a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=玩">小玩件</a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=玩">大玩件</a>
 										</div>
 									</div>
 									<div class="subitems">
 										<dl>
 											<dd><b>小玩件</b><i> > </i></dd>
 											<dt>
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=核桃">核桃</a>											
-												<a href="<%=request.getContextPath()%>/select_byname?Gname=玩">更多</a>
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=核桃">核桃</a>											
+												<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=玩">更多</a>
 
 											</dt>
 										</dl>															
@@ -278,16 +278,16 @@
 							</div>
 						</li>	
 						<li>
-							<h3><a href="<%=request.getContextPath()%>/select_byname?Gname=藏">收藏</a></h3>
+							<h3><a href="<%=request.getContextPath()%>/select_goods_byname?Gname=藏">收藏</a></h3>
 							<i> > </i>
 							<div class="item-sub">
 								<div class="subleft">
 									<div class="item-channels">
 										<div class="channel">
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=玩">玩物<i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=器桃">玉容器<i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=摆">摆件<i> > </i></a>
-											<a href="<%=request.getContextPath()%>/select_byname?Gname=风水">风水<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=玩">玩物<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=器桃">玉容器<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=摆">摆件<i> > </i></a>
+											<a href="<%=request.getContextPath()%>/select_goods_byname?Gname=风水">风水<i> > </i></a>
 										</div>
 									</div>
 									<div class="subitems">

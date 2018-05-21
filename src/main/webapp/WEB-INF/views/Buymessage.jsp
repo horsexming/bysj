@@ -30,12 +30,12 @@
 		</tr>
 		<tr>
 			<td>商品图片</td>		
-			<td><img src="<%=request.getContextPath() %>/static/goods/${ogoods.gpicture}" width="100" height="75">
+			<td><img src="<%=request.getContextPath() %>/static/image/${ogoods.gpicture}" width="100" height="75">
 		
 		</tr>
 		<tr>	
-		<td>&nbsp;</td>	
-			<td><input type="text" name="opicture" value="${ogoods.gpicture}" readonly="readonly"></td>
+		<td>商品价格</td>	
+			<td><input type="text" name="opicture" value="${ogoods.gprice}" readonly="readonly"></td>
 		</tr>
 		<tr>
 			<td>商家名</td>
@@ -50,7 +50,6 @@
 			<td><input type="submit" value="提交"></td><td>
 		</tr>
 	</table> 
-	<input>
 </form>
 	
 </body>

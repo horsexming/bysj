@@ -63,7 +63,7 @@ public class businController {
             System.out.println(path);
             //上传文件名
             String uuid = UUID.randomUUID().toString().substring(0, 5);
-            String filename = Gpicture.getOriginalFilename()+uuid;
+            String filename = uuid+Gpicture.getOriginalFilename();
             Gpicture.transferTo(new File(path+"static/image/"+filename));
             Bgoods bgoods = new Bgoods();
             bgoods.setGname(businessFile.getGname());
@@ -225,7 +225,42 @@ public class businController {
 		}
 		
 		//下架商品上架
+		@RequestMapping("/shangjia_xboods/{id}")	
+		public String shangjia_xboods(@PathVariable("id")Integer id,Model model) {
+			model.addAttribute("xiajia_shangjia", goodsService.getXgoods(id));		
+			return "goods/select_Xdoods_Byid";
+		}
 		
+		@RequestMapping(value="/xshangjia_Goods/{id}",method=RequestMethod.POST)
+		public String Business_shangjia_Goods(@RequestParam("Gpicture")MultipartFile Gpicture,BusinessFile businessFile,
+				HttpServletRequest request,HttpSession session,Model model
+				,@RequestParam(value="pn",defaultValue="1")Integer pn,@PathVariable("id") Integer id ) throws Exception{
+			//如果文件不为空，写入上传路径
+	        if(!Gpicture.isEmpty()) {;
+	            //上传文件路径
+	            String path = request.getServletContext().getRealPath("/");
+	            System.out.println(path);
+	            //上传文件名
+	            String uuid = UUID.randomUUID().toString().substring(0, 5);
+	            String filename = uuid+Gpicture.getOriginalFilename();
+	            Gpicture.transferTo(new File(path+"static/image/"+filename));
+	            Bgoods bgoods = new Bgoods();
+	            bgoods.setGname(businessFile.getGname());
+	            bgoods.setBusiness(session.getAttribute("buname").toString());
+	            bgoods.setGpicture(filename);
+	            System.out.println("000000"+businessFile.getGprice());
+	            bgoods.setGprice(businessFile.getGprice());
+	            bgoods.setGumber(businessFile.getGumber());
+	            bgoods.setGcategory(businessFile.getGcategory());
+	            businessService.addGoods(bgoods);
+	            goodsService.delete_xgoods(id);
+	    		
+	    		return "redirect:/select_Xdoods_page";
+	        } else {
+	            return "error";
+	        }
+			
+		}
 		
 		
 		

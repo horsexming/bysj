@@ -18,12 +18,12 @@
 			<td colspan="2">&nbsp;</td>
 			<td colspan="2">名称</td>
 			
-			<td colspan="2">地址</td>
+			<td colspan="2">收件地址</td>
 			
 			<td colspan="2">购买者</td>
 			
-			<td colspan="2">图片</td>
-			
+			<td colspan="2">订单编号</td>
+			<td colspan="2">地址修改</td>
 			<td><a href="<%=request.getContextPath() %>/Business_index/${ordermessage.obusiness}">返回</a></td>
 		</tr>
 		<c:forEach items="${order_message}" var="ordermessage">
@@ -34,9 +34,8 @@
 				<td colspan="2">${ordermessage.oaddress}</td>
 				
 				<td colspan="2">${ordermessage.ouser}</td>
-				
-				<td colspan="2"><img src="<%=request.getContextPath()%>/static/goods/${ordermessage.opicture}" width="100" height="75"></td>
-			
+				<td colspan="2">${ordermessage.onumber}</td>
+				<td colspan="2"><a href="#">地址修改</a></td>
 		</c:forEach>
 	</table>
 	<table align="center">
@@ -74,9 +73,7 @@
 							</li>
 					  	</c:if>					    
 					    <li><a href="<%=request.getContextPath()%>/select_business_order?pn=${pageInfo.pages}" aria-label="Previous">尾页</a></li>
-					  <li>
-					  	<a href="<%=request.getContextPath()%>/Business_index">返回</a>
-					  </li>
+					 
 					  </ul>
 				</nav>
 			</div>		
